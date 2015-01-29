@@ -1,0 +1,44 @@
+comment "Exported from Arsenal by Mosh";
+
+comment "Remove existing items";
+removeAllWeapons this;
+removeAllItems this;
+removeAllAssignedItems this;
+removeUniform this;
+removeVest this;
+removeBackpack this;
+removeHeadgear this;
+removeGoggles this;
+
+comment "Add containers";
+this forceAddUniform "U_O_CombatUniform_ocamo";
+this addItemToUniform "FirstAidKit";
+this addItemToUniform "30Rnd_45ACP_Mag_SMG_01";
+this addVest "V_HarnessO_brn";
+for "_i" from 1 to 2 do {this addItemToVest "APERSMine_Range_Mag";};
+for "_i" from 1 to 2 do {this addItemToVest "HandGrenade";};
+this addItemToVest "SmokeShell";
+this addItemToVest "SmokeShellRed";
+for "_i" from 1 to 2 do {this addItemToVest "Chemlight_red";};
+for "_i" from 1 to 2 do {this addItemToVest "6Rnd_GreenSignal_F";};
+for "_i" from 1 to 2 do {this addItemToVest "30Rnd_45ACP_Mag_SMG_01";};
+this addHeadgear "H_Hat_tan";
+this addGoggles "G_Balaclava_blk";
+
+comment "Add weapons";
+this addWeapon "SMG_01_F";
+this addPrimaryWeaponItem "optic_ACO_grn";
+this addWeapon "hgun_Pistol_Signal_F";
+
+comment "Add items";
+this linkItem "ItemMap";
+this linkItem "ItemCompass";
+this linkItem "ItemWatch";
+this linkItem "ItemRadio";
+this linkItem "O_UavTerminal";
+this linkItem "NVGoggles_OPFOR";
+
+comment "Set identity";
+this setFace "WhiteHead_20";
+this setSpeaker "Male05ENGB";
+[this,"BI"] call bis_fnc_setUnitInsignia;

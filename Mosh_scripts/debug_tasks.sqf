@@ -1,0 +1,21 @@
+
+hint "zone 1"; deletevehicle ahp; sleep 3; 
+hint "zone 2"; deletevehicle ahp_1; sleep 3;
+hint "zone 3"; deletevehicle ahp_2; sleep 3; 
+hint "zone 4"; deletevehicle ahp_3; sleep 3; 
+hint "zone 5"; deletevehicle ahp_4; sleep 3; 
+hint "zone 8"; deletevehicle ahp_5; sleep 3; 
+hint "zone 7"; deletevehicle ahp_6; sleep 3; 
+hint "zone 8"; deletevehicle ahp_7; sleep 3; 
+hint "zone 9"; deletevehicle ahp_8; sleep 3; 
+hint "zone 10"; deletevehicle ahp_9; sleep 3; 
+hint "zone 11"; deletevehicle ahp_10; sleep 3; 
+hint "zone 12"; deletevehicle ahp_11; sleep 3; 
+hint "zone 13"; deletevehicle ahp_12; sleep 3; 
+hint "zone 14"; deletevehicle ahp_13; sleep 3; 
+hint "zone 15"; deletevehicle ahp_14; sleep 3; 
+hint "zone 16"; deletevehicle ahp_15; sleep 3; 
+hint "zone 17"; deletevehicle ahp_16; sleep 3; 
+hint "zone 18"; deletevehicle ahp_17; sleep 3; 
+hint "zone 19"; deletevehicle ahp_18; sleep 3; 
+hint "zone 20"; deletevehicle ahp_19; sleep 3;

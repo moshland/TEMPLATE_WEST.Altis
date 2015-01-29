@@ -1,0 +1,1 @@
+{_x setMarkerAlpha 0;} foreach ["info,info_1,info_2,info_3,info_4"];

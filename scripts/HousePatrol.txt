@@ -1,0 +1,118 @@
+=================================================================
+
+		Random House Patrol Script v2.2 for Arma 3 
+		    by Tophe of Östgöta Ops [OOPS]
+
+=================================================================
+This script will allow you to have a unit patrol a house, randomly.
+
+All you need to do is to run the script on a unit and place it close to a building. 
+The script will then check how many available positions there are in the closest building, 
+place the unit randomly at one and have it patrol the building. 
+
+Every time the unit reaches it's waypoint inside the house it will stay and wait for a short 
+while before moving to the next point. The amount of time the uniy waits is random. 
+So you'll never really know how long the unit will stand still.
+
+If you turn on the debug mode, all positions will be marked with ingame 3d markers.
+Also there is a chat feedback from the units, as well as a map marker showing the next waypoint.
+
+It works in Multiplayer as well as Singleplayer.
+
+
+Contact & bugreport:
+BIS Forums: http://forums.bistudio.com/showthread.php?179687-Random-House-Patrol-Script-by-Tophe
+
+=================================================================
+
+HOW TO USE:
+
+Place unit close to a house and set init field to:  guard = [this] execVM "HousePatrol.sqf" 
+ 
+
+OPTIONAL SETTINGS:
+
+guard = [this, MODE, STAND TIME, EXCLUDED POS, STARTING POS, DEBUG] execVM "HousePatrol.sqf" 
+
+
+* BEHAVIOUR - set unit behaviour.
+	guard = [this,"COMBAT"] execVM "HousePatrol.sqf" 
+	
+	Options: CARELESS, SAFE, AWARE, COMBAT, STEALTH
+	Default: SAFE
+
+* STAND TIME - Set maximum amount of seconds the unit will wait before moving to next waypoint.
+	guard = [this,"SAFE",50] execVM "HousePatrol.sqf" 
+	
+	Options: Any value in seconds. 0 = continuous patrol.
+	Default: 30
+
+* EXCLUDED POSITIONS - exclude certain building positions from patrol route.
+	guard = [this,"SAFE",30, [5,4]] execVM "HousePatrol.sqf" 
+	
+	Options: Array of building positions
+	Default: [] (no excluded positions)
+	
+* STARTING POS - Some building positions doesn't work well will the setPos command. 
+	Here you may add a custom starting pos. Negative number means starting pos will be randomized.
+	guard = [this,"SAFE",30, [5,4], 2] execVM "HousePatrol.sqf" 
+
+	Options: Any available building position
+	Default: -1 (random)
+	
+* STANCE - Tell the unit what stance to use.
+	To keep the unit from going prone you can set this to MIDDLE or UP.
+	AUTO will be the standard behaviour and unit will crawl around in combat mode.
+	HIGH is the default mode. This is like AUTO but prone position is excluded.
+	
+	Options: UP, DOWN, MIDDLE, AUTO, HIGH
+	Default: HIGH
+	
+* DEBUG - Use markers and chatlog for mission design debugging.
+	guard = [this,"SAFE",30, [], -1, true] execVM "HousePatrol.sqf" 	
+	
+	Options: true/false
+	Default: false
+
+
+DEFAULT SETTINGS: guard = [this, "SAFE", 30, [], false] execVM "HousePatrol.sqf"
+
+====================================================================
+
+VERSION HISTORY:
+v2.2
+- Added stance option
+- Behaviour and stance settings are case insensitive ( SAFE, Safe SaFe are all the same)
+
+
+v2.1
+- Fixed debugging bug (sic)
+- If bulding has no building positions the script will now exit
+- If the building only has one position, the unit will be positioned there, then the script exits.
+
+
+v2.0
+- Reworked for Arma 3
+- Optimized the code for better performance.
+- Added option for mission debugging
+- Added option for excluding positions from route
+- Added option for setting starting position
+
+v1.1
+- Optimized the code for better performance.
+- Added a workaround for a game bug where some buildings are missing data.
+
+v1.0
+- First release for Arma 2
+
+
+
+KNOWN ISSUES:
+
+Sometimes Arma has some problems with pathfinding and getting units to 
+report if they have finished or failed a task. To get around any such
+problems the guard will be given a new command if it takes more than 30
+seconds to finish the last command. Some houses seem to be more difficult
+for the AI to sort out. 
+
+

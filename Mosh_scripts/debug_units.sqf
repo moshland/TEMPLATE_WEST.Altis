@@ -1,0 +1,14 @@
+hint "units about to die";
+sleep 5;
+deletevehicle unita; 
+sleep 5; 
+deletevehicle unitb; 
+sleep 5; 
+deletevehicle unitc; 
+sleep 5; 
+deletevehicle unitd; 
+sleep 5; 
+deletevehicle unite; 
+sleep 5; 
+task6 setTaskState "Succeeded"; 
+task7 setTaskState "Succeeded"; 

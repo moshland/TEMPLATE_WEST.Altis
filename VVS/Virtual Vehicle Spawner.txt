@@ -1,0 +1,40 @@
+Virtual Vehicle Spawner (VVS) is what the title says, it is like Virtual Ammobox System (VAS) but for vehicles. This comes with limited
+configurability but will be expanded later in time. The only real good use this has is for Armory missions, if you use it for something else then cool!
+
+Installation:
+Same deal with VAS. You need to place the following in your description.ext:
+
+#include "VVS\menu.h"
+
+If you already have the class CfgFunctions in your description.ext then just place inside the {} for class CfgFunctions:
+
+#include "VVS\Functions.h"
+
+If you do not have class Cfgfunctions already in your description.ext then:
+
+class CfgFunctions
+{
+	#include "VVS\Functions.h"
+};
+
+Now for the actual configuring part (using the map editor) there are two things required, a object or man to attach the addaction to and a marker. So first
+place your 'vehicle vendor' guy down on the map and near him put a marker down and name it. Remember what you named the marker. Now on the 'vehicle vendor' guy
+put the following into his initialization field:
+
+this addAction["Virtual Vehicle Spawner",VVS_fnc_openVVS,["VVS_all_1","All"]];
+
+Now here is what we look at: ["VVS_all_1","All"]
+This array is our vendor configuration. 
+
+VVS_all_1: this is our marker name where the vehicle will spawn
+All: This is our filter for what type of vendor he is. All means he shows all vehicles. Filters that work:
+
+All
+Car
+Air
+Ship
+Submarine (This is SDV's, will later be merged into Ship).
+Armored
+
+It is recommended that you open the example mission in the editor and see how I set everything up. Another thing to note is whichever direction you have the marker facing
+it is the direction the vehicle will face when it spawns in. I would like to give a more detailed / easily setup guide but I've been up for a long time..

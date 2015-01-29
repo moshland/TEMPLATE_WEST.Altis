@@ -1,0 +1,137 @@
+author = "Mosh";
+onLoadName = "OnLoadName";
+OnLoadMission = "OnloadMission";
+OnLoadIntro = "OnLoadIntro";
+overviewText = "OverviewText";
+overviewTextLocked = "overviewTextLocked";
+overviewPicture = "Mosh_images\moshpit.paa";
+respawn = BASE;
+respawndelay = 10;
+disabledAI = false;
+enableDebugConsole = 1;
+OnLoadIntroTime= 1;
+OnLoadMissionTime= 1;
+LoadScreen = "Mosh_images\loading.jpg";
+showGPS=1;
+saving=1;
+showmap=1;
+briefing=0;
+debriefing=1;
+aiKills = 1;
+
+doneKeys[] = {MOSH_Mission01Key,MOSH_TotallyFailedKey01}; 
+
+class Header
+{
+  gameType = COOP;
+  minPlayers = 1;
+  maxPlayers = 4;
+};
+
+#include "VVS\menu.h"
+#include "VAS\menu.hpp"
+#include "gvs\colors_include.hpp"
+#include "gvs\control_include.hpp"
+#include "gvs\stc_include.hpp"
+#include "=BTC=_q_revive\dlg.h"
+#include "BRS\defines.hpp"
+#include "BRS\dialogs.hpp"
+#include "bon_recruit_units\dialog\common.hpp"
+#include "bon_recruit_units\dialog\recruitment.hpp"
+#include "ASORGS\menu.hpp"
+//#include "DLSR\DIALOG\defines_GLOBAL.hpp"
+#include "VRH\resources\defines.hpp"
+//#include "VSYS\resources\defines.hpp"
+#include "CHVD\dialog.hpp"
+
+// Control types
+#define CT_STATIC           0
+#define CT_MAP_MAIN         101
+
+// Static styles
+#define ST_CENTER         0x02
+#define ST_PICTURE        0x30
+
+class RscTitles 
+{
+    #include "UI\defines.hpp"
+    #include "gvs\_new.hpp"
+	#include "scripts\NameTags.hpp"
+};
+
+class CfgFunctions
+{
+	#include "VVS\Functions.h"
+	#include "VAS\cfgfunctions.hpp"
+	//#include "taw_vd\CfgFunctions.hpp"
+	#include "LVR\functions\functions.hpp"
+	#include "SBGF\cfgfunctions.hpp"
+	#include "ASORGS\cfgfunctions.hpp"
+	//#include "DLSR\functions\functions.hpp"
+	//#include "VSYS\functions\functions.hpp"
+	#include "VRH\functions\functions.hpp"
+	#include "CHVD\CfgFunctions.hpp"
+	
+};
+
+class CfgIdentities
+{
+	#include "Mosh_scripts\players.hpp"
+};
+
+class CfgMusic
+{
+ tracks[]={};
+
+ class Intro
+ {
+  name = "intro";
+  sound[] = {"Mosh_sounds\intro.ogg", db+0, 1.0};
+ };
+ class Outro
+ {
+  name = "outro";
+  sound[] = {"Mosh_sounds\outro.ogg", db+0, 1.0};
+ };
+ class Outro1
+ {
+  name = "outro1";
+  sound[] = {"Mosh_sounds\outro1.ogg", db+10, 1.0};
+ };
+ class Outro2
+ {
+  name = "outro2";
+  sound[] = {"Mosh_sounds\outro2.ogg", db+10, 1.0};
+ };
+};
+
+class CfgSounds
+{
+ sounds[] = {}; 
+
+ class kill
+  {
+   name = "kill";
+   sound[] = {"Mosh_sounds\kill.ogg", 1, 1};
+   titles[] = {};
+  };
+  class spot
+  {
+   name = "spot";
+   sound[] = {"Mosh_sounds\spot.ogg", 1, 1};
+   titles[] = {};
+  };
+ };
+
+ 
+ class CfgRadio
+{
+ sounds[] = {};
+  class RadioMsg1
+  {
+   name = "mosh";
+    sound[] = {"sound\radio.ogg", db+0, 1.0};
+    title = "MISSION BY MOSH";
+  };
+};
+

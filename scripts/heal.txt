@@ -1,0 +1,39 @@
+Heal
+
+by
+Coding
+
+
+Description:
+Heals all units over time within a radius around a defined object.
+
+
+Features: 
+Heal units
+
+
+Installation:
+Copy heal.sqf into your missionfolder.
+
+
+Included files:
+heal.sqf
+
+
+Usage:
+Call the script from an objects init:
+_null = [this, 10, 0.01, 2] execVM "heal.sqf";
+or from the init.sqf if you have named an object in the mission "medictent":
+[medictent, 10, 0.01, 2] execVM "heal.sqf";
+Description of parameters:
+1: object the script shall be attached to
+2: radius around the object in which units are healed
+3: amount of health restored per "tick"
+4: length of one "tick"
+The example above heals every 2 seconds 1% health of each unit that is within 10 meters to the medictent.
+To change the scripts behaviour to an instant heal set the third parameter to 1.
+
+
+Change log:
+1.0
+- initial release
